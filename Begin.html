@@ -856,6 +856,26 @@ country. A good solution would be to stop usage of vehicles older than
 models and promote public transport by increasing their numbers and
 enabling better connections and routes between various places.</p>
 </div>
+<div id="prediction-using-model-on-train-data" class="section level3">
+<h3>Prediction using model on train data</h3>
+<pre class="r"><code>df1 = data.frame(A1=df$A1,
+                 A2=df$A2,
+                 A3=df$A3,
+                 A4=df$A4)
+head(df1)</code></pre>
+<pre><code>##     A1   A2   A3    A4
+## 1  9.0 3571 1976 0.525
+## 2  9.0 4092 1250 0.572
+## 3  9.0 3865 1586 0.580
+## 4  7.5 4870 2351 0.529
+## 5  8.0 4399  431 0.544
+## 6 10.0 5342 1333 0.571</code></pre>
+<pre class="r"><code>head(predict(model3,df1),5)</code></pre>
+<pre><code>##        1        2        3        4        5 
+## 520.8174 549.9916 576.4309 482.1805 520.0989</code></pre>
+<pre class="r"><code>head(df$B,5)</code></pre>
+<pre><code>## [1] 541 524 561 414 410</code></pre>
+</div>
 </div>
 
 

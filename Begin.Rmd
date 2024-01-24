@@ -258,8 +258,20 @@ summary(model3)
 Interpretation :
 
 1.  Intercept : is not interpretable since petrol tax cannot be made equal to zero and zero proportion of population with driver's license does not make sense.
-2.   Petrol tax (cents per gallon) : for one cent per gallon increase in petrol tax , the petrol consumption is expected to decrease by 29.48 million gallons adjusting for other regressors.
-3.   Average income (dollars) : for one dollar increase in average income, the petrol consumption is expected to decrease by 0.07 million gallons adjusting for other regressors.
-4.   Proportion of population with driving license : for unit increase in this proportion , the petrol consumption is expected to increase by 1374.77 million gallons adjusting for other regressors.
+2.  Petrol tax (cents per gallon) : for one cent per gallon increase in petrol tax , the petrol consumption is expected to decrease by 29.48 million gallons adjusting for other regressors.
+3.  Average income (dollars) : for one dollar increase in average income, the petrol consumption is expected to decrease by 0.07 million gallons adjusting for other regressors.
+4.  Proportion of population with driving license : for unit increase in this proportion , the petrol consumption is expected to increase by 1374.77 million gallons adjusting for other regressors.
 
 Therefore, it can be concluded that proportion of population with driving license seems cause greater change in petrol consumption in the country. A good solution would be to stop usage of vehicles older than 17 years to reduce pollution caused by outdated and inefficient engine models and promote public transport by increasing their numbers and enabling better connections and routes between various places.
+
+### Prediction using model on train data
+
+```{r}
+df1 = data.frame(A1=df$A1,
+                 A2=df$A2,
+                 A3=df$A3,
+                 A4=df$A4)
+head(df1)
+head(predict(model3,df1),5)
+head(df$B,5)
+```
